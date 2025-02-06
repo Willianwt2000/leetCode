@@ -27,24 +27,21 @@ Explanation:
 nums[1] and nums[2] are both odd. So the answer is false.
 */
 
-function isArraySpecial(nums: number[]): boolean {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 === 0) {
-      if (nums[i + 1] % 2 === 1) {
-        if (nums[i + 1] % 2 === 1) {
-          return false;
-        }
-      } else {
-        return false;
+function isSpecialArray(nums:number[]): boolean {
+  if (nums.length <= 1) return true;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+      const current = nums[i];
+      const next = nums[i + 1];
+      if ((current % 2 === 0 && next % 2 === 0) || (current % 2 !== 0 && next % 2 !== 0)) {
+          return false; 
       }
-    }
   }
 
-  return true;
+  return true; 
 }
 
-//console.log(isArraySpecial([1]));
-console.log(isArraySpecial([1,2])); //true beside that 
-console.log(isArraySpecial([2, 1, 5])); //true
-console.log(isArraySpecial([4, 3, 1, 6]));
-console.log(isArraySpecial([3, 6, 1, 8]));
+console.log(isSpecialArray([1]));          
+console.log(isSpecialArray([1,2]));        
+console.log(isSpecialArray([2, 1, 4]));    
+console.log(isSpecialArray([4, 3, 1, 6])); 
