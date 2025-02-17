@@ -17,14 +17,21 @@
 
 function longestCommonPrefix(strs: string[]): string {
 
-  let commonPrefix: string = strs[0]|| "";
-  
-  for (let i = 0; i < strs.length; i++) {
-    console.log(commonPrefix[i])
+  let prefix: string = "";
+
+  for (let i = 0; i < strs[0].length; i++) { //flower
+    const character = strs[0][i];
+
+    for (let j = 0; j < strs.length; j++) {
+      if (strs[j][i] !== character) return prefix
+      
+    }
+
+    prefix += character;
     
   }
 
-   return commonPrefix;
+   return prefix
 };
 
 

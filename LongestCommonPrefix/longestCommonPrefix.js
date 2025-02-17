@@ -9,11 +9,16 @@
 // Output: ""
 // Explanation: There is no common prefix among the input str
 function longestCommonPrefix(strs) {
-    var commonPrefix = strs[0] || "";
-    for (var i = 0; i < strs.length; i++) {
-        console.log(commonPrefix[i]);
+    var prefix = "";
+    for (var i = 0; i < strs[0].length; i++) {
+        var character = strs[0][i];
+        for (var j = 0; j < strs.length; j++) {
+            if (strs[j][i] !== character)
+                return prefix;
+        }
+        prefix += character;
     }
-    return commonPrefix;
+    return prefix;
 }
 ;
 console.log(longestCommonPrefix(["flower", "flow", "flight"]));
