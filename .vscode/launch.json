@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "type": "msedge",
+      "name": "http://MCMXCIV",
+      "request": "launch",
+      "url": "http://MCMXCIV"
+    }
+  ]
+}

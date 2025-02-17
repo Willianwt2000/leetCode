@@ -50,5 +50,48 @@
 */
 
 function romanToInt(s: string): number {
-    
+
+  
+  const romanNumber = {
+    "I":   1,
+    "V":   5,
+    "X":   10,
+    "L":   50,
+    "C":   100,
+    "D":   500,
+    "M":   1000 
+  }
+
+  let total: number = 0;  
+
+    for (let i=0; i < s.length; i++) {  //I
+      let currentSimbol = s[i]; //I
+      let currentValue = romanNumber[currentSimbol]; // 1 indexando el valor
+      
+
+      const nextSimbol = s[i + 1]; //1000
+      const nextValue = romanNumber[nextSimbol]; // M = 1000
+
+
+      if (currentValue < nextValue) { //current = 100, next = 1000    total =  1000-100
+        total -= currentValue
+        console.log(total)
+      } else {
+        total += currentValue
+      }
+      
+
+    }
+
+    return total;
+
 };
+
+
+// console.log(romanToInt("III"));  //3
+// console.log(romanToInt("LVIII")); //58
+// console.log(romanToInt("MCMXCIV")); //1994
+
+
+// console.log(romanToInt("MCMXCIV")); //4
+console.log(romanToInt("CM")); //900
