@@ -10,9 +10,12 @@
  * @param {ListNode} list2
  * @return {ListNode}
  */
-var mergeTwoLists = function(list1, list2) {
+function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
   let result = [...list1,...list2]
-  
-    result.sort((a, b) => a - b)
-    return result;
-  };
+
+  return result.sort();
+};
+
+console.log(mergeTwoLists([1,2,4],[1,3,4]));
+console.log(mergeTwoLists([],[]));
+console.log(mergeTwoLists([],[0]));
