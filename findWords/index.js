@@ -1,5 +1,4 @@
 //find words containing
-
 /*
   You are given a 0-indexed array of strings words and a character x.
 
@@ -25,26 +24,22 @@ Input: words = ["abc","bcd","aaaa","cbc"], x = "z"
 Output: []
 Explanation: "z" does not occur in any of the words. Hence, we return an empty array
  */
-
-function findWordsContaining(words: string[], x: string): number[] {
-    let posiciones: number[] = []
-    for (let i = 0; i < words.length; i++) {
-      if (words[i].includes(x)) {
-        posiciones.push(i)
-      }
-    //  for (let j = 0; j < words[i].length; j++) {
-    //   if (words[i][j] === x) { //le
-    //     posiciones.push(i)
-    //     break;
-    //   }
-    //  } 
+function findWordsContaining(words, x) {
+    var posiciones = [];
+    for (var i = 0; i < words.length; i++) {
+        if (words[i].includes(x)) {
+            posiciones.push(i);
+        }
+        //  for (let j = 0; j < words[i].length; j++) {
+        //   if (words[i][j] === x) { //le
+        //     posiciones.push(i)
+        //     break;
+        //   }
+        //  } 
     }
     return posiciones;
-};
-
-
-
-
-console.log(findWordsContaining(["leet","code"],"e"))  //[0,1]
-console.log(findWordsContaining(["abc","bcd","aaaa","cbc"], "a")) //[0,2]
-console.log(findWordsContaining(["abc","bcd","aaaa","cbc"],"z")) // []
+}
+;
+console.log(findWordsContaining(["leet", "code"], "e")); //[0,1]
+console.log(findWordsContaining(["abc", "bcd", "aaaa", "cbc"], "a")); //[0,2]
+console.log(findWordsContaining(["abc", "bcd", "aaaa", "cbc"], "z")); // []
