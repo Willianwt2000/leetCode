@@ -36,10 +36,7 @@ Explanation: The function always returns 42.
 
 
 function map(arr: number[], fn: (n: number, i: number) => number): number[] {
-
   const nums: number = fn(arr[0],1);
-
-
   return [nums]
 }
 
