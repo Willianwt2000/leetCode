@@ -10,16 +10,15 @@
 */
 
 function removeElement(nums: number[], val: number): number {
-  let newNums: number[] = []
-  let k: number = 0
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== val) {
-      newNums.push(nums[i])
-      nums[k] = nums[i]
+
+  let k: number = 0;                                        // k = 0
+  for (let i = 0; i < nums.length; i++) {                   // 
+    if (nums[i] !== val) {                                   //
+      nums[k] = nums[i];
     }
   }
-  console.log(nums)
-  return  newNums.length;
+  console.log(nums);
+  return  nums.length;
 }
 console.log("K = "+removeElement([3, 2, 2, 3], 3)); //2
 console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)); //5
