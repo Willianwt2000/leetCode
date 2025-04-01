@@ -9,7 +9,7 @@
 
 */
 
-function removeElement(nums: number[], val: number): number {
+function removeElement(nums: number[], val:number): number {
 
   let k: number = 0;                                        // k = 0
   for (let i = 0; i < nums.length; i++) {                   // 
@@ -18,8 +18,8 @@ function removeElement(nums: number[], val: number): number {
     }
   }
   console.log(nums);
-  return  nums.length;
+  return  k;
 }
 console.log("K = "+removeElement([3, 2, 2, 3], 3)); //2
-console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)); //5
+// console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)); //5
 
