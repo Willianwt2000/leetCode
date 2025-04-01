@@ -5,7 +5,6 @@ function missingNumber(nums: number[]): number {
   //organizar mi arreglo
   nums.sort((a,b) => (a-b));
 
-  // retornar el que me falta
   
   //iterar sobre arreglo organizado
   for (let i = 0; i < nums.length; i++) {
@@ -16,9 +15,10 @@ function missingNumber(nums: number[]): number {
     } else {
       missingNum = nums[i] + 1;
     }
-      
-    }
-
+    
+  }
+  
+  // retornar el que me falta
     return missingNum;
 };
 

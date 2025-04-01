@@ -33,27 +33,21 @@ Output: true
 
 
  */
-
-function containsDuplicate(nums: number[]): boolean {
-  let acumulator: number = 1;
-
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i+1; j < nums.length; j++) {
-      if (nums[i] === nums[j]) {
-        acumulator++;
-      }
+function containsDuplicate(nums) {
+    var acumulator = 1;
+    for (var i = 0; i < nums.length; i++) {
+        for (var j = i + 1; j < nums.length; j++) {
+            if (nums[i] === nums[j]) {
+                acumulator++;
+            }
+        }
     }
-  }
-
-  return acumulator >= 2;
+    return acumulator >= 2;
 }
-
 // buscar el los numeros repetidos
 // si aparece varias  veces retornar true
 //si son dclg
-
 console.log(containsDuplicate([1, 2, 3, 1])); //true
 console.log(containsDuplicate([1, 2, 3, 4])); //false
 console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])); //true
-
-console.log(containsDuplicate([3,3])); //true
+console.log(containsDuplicate([3, 3])); //true
