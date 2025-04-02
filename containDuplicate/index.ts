@@ -35,17 +35,16 @@ Output: true
  */
 
 function containsDuplicate(nums: number[]): boolean {
-  let acumulator: number = 1;
-
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i+1; j < nums.length; j++) {
-      if (nums[i] === nums[j]) {
-        acumulator++;
+  const seen = new Set<number>();
+  
+  for (const num of nums) {
+      if (seen.has(num)) {
+          return true;
       }
-    }
+      seen.add(num);
   }
-
-  return acumulator >= 2;
+  
+  return false;
 }
 
 // buscar el los numeros repetidos
