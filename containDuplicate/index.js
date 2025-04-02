@@ -34,15 +34,15 @@ Output: true
 
  */
 function containsDuplicate(nums) {
-    var acumulator = 1;
-    for (var i = 0; i < nums.length; i++) {
-        for (var j = i + 1; j < nums.length; j++) {
-            if (nums[i] === nums[j]) {
-                acumulator++;
-            }
+    var seen = {};
+    for (var _i = 0, nums_1 = nums; _i < nums_1.length; _i++) {
+        var num = nums_1[_i];
+        if (seen[num]) {
+            return true;
         }
+        seen[num] = true;
     }
-    return acumulator >= 2;
+    return false;
 }
 // buscar el los numeros repetidos
 // si aparece varias  veces retornar true

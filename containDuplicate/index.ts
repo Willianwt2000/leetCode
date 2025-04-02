@@ -35,18 +35,17 @@ Output: true
  */
 
 function containsDuplicate(nums: number[]): boolean {
-  const seen = new Set<number>();
+  const seen: {[key: number]: boolean} = {};
   
   for (const num of nums) {
-      if (seen.has(num)) {
+      if (seen[num]) {
           return true;
       }
-      seen.add(num);
+      seen[num] = true;
   }
   
   return false;
 }
-
 // buscar el los numeros repetidos
 // si aparece varias  veces retornar true
 //si son dclg
