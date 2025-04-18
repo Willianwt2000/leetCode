@@ -3,7 +3,6 @@ Given an integer array nums and an integer k, return true if there are two disti
  */
 
 function containsNearbyDuplicate(nums: number[], k: number): boolean {
-    
 
   return false;
 };
