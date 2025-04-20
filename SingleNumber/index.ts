@@ -1,3 +1,4 @@
+//XOR operator
 function singleNumber(nums: number[]): number {
 
   let uniqueNumber: number = 0;
