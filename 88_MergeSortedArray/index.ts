@@ -1,6 +1,25 @@
-function merge(nums1: number[], m: number, nums2: number[], n: number): void {
-    
-};
+function merge(nums1: number[], m: number, nums2: number[], n: number): number[] {
+  let size = m + n;
+  let k = 0;
+  console.log(nums1[k]);
+
+  if (nums1.length <= 1) {
+    nums1[k] = nums2[k];
+    nums1.shift();
+  } else {
+    nums1.splice(-3);
+  }
+  for (let i = 0; i < n; i++) {
+    nums1.push(nums2[i]);
+    k++;
+  }
+
+  nums1.sort((a, b) => a - b);
+  
+  console.log(nums1);
+  return nums1;
+}
+
 
 
 console.log(merge([1,2,3,0,0,0],3,[2,5,6],3)); //[1,2,2,3,5,6]
