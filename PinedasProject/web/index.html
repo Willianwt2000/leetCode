@@ -1,0 +1,140 @@
+Angel Marte. — 15:55
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Ventas</title>
+    <link rel="stylesheet" href="estilos.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      main {
+        width: auto;
+        border: solid color red;
+      }
+
+      .padre {
+        max-width: 1024px;
+        width: auto;
+        margin: 0 auto 30px;
+        padding: 30px;
+        border: solid;
+        border-radius: 12px;
+      }
+
+      .padre h1 {
+        color: #0d8113;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 5px;
+        font-weight: 700;
+      }
+
+      .padre h2 {
+        color: #740831;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 30px;
+        font-weight: 400;
+      }
+
+
+      .form{
+        border: solid ;
+      }
+
+      .form-group{
+        margin: 5px;
+        padding: 5px;
+        /* border: solid 1px; */
+      }
+
+
+    .form-group{
+        display: flex;
+        gap: 5rem;
+      }
+
+      .form-group label {
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="padre">
+        <h1>DevangSoft</h1>
+        <h2>Venta de software y equipos tecnologicos</h2>
+        <!-- contenedor -->
+        <div class="form">
+          <div class="form-group">
+            <label for="code-client">COD: CLIENTE</label>
+            <input id="code-client" type="text" placeholder="Escribe el código aquí" />
+          </div>
+          <div class="form-group">
+            <label for="code-product">COD: PRODUCTO</label>
+            <input id="code-product" type="text" placeholder="Escribe el código aquí" />
+          </div>
+          <div class="form-group">
+            <label for="product">PRODUCTO</label>
+            <input id="product" type="text" placeholder="Escribe el código aquí" />
+          </div>
+          <div class="form-group">
+            <label for="price">PRECIO</label>
+            <input id="price" type="text" placeholder="Escribe el precio aquí" />
+          </div>
+          <div class="form-group">
+            <label for="amount" >CANTIDAD</label>
+            <input id="amount" type="text" placeholder="Escribe la cantidad aquí" />
+          </div>
+        </div>
+
+        <button type="submit">enviar</button>
+      </section>
+
+      <section class="tableCode">
+        <table border="5">
+          <tr>
+            <th>NO.</th>
+            <th>CODIGO</th>
+            <th>PRODUCTO</th>
+            <th>CANT</th>
+            
+            <th>PRE UNIT</th>
+            <th>TOTAL</th>
+          </tr>
+          <tbody>
+            <tr>
+
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+  <footer>www.DevangSoft.com</footer>
+</html>
+
+//container
+<!-- <div class="padre">
+    //1
+    <div class="hijos">
+
+    </div>
+
+    //2
+    <div class="hijos">
+
+    </div>
+
+    //3
+    <div class="hijos">
+
+    </div>
+</div> -->
