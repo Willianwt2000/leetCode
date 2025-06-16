@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/buddy-strings/submissions/1666501922
+
 function buddyStrings(s: string, goal: string): boolean {
     let condition: boolean = true;
     if (s.length !== goal.length ) return condition = false;
