@@ -1,26 +1,52 @@
+// function isPalindrome(s: string): boolean {
+//   let originalS: string = s.toLowerCase();
+//   let cleanReverseString: string = "";
+//   let cleanOriginalString: string = "";
+//   if (s.length === 0 || s.length === 1) {
+//     return true;
+//   }
+//   for (let i = originalS.length - 1; i >= 0; i--) {
+//     const character: string = originalS[i]; 
+//     if ((character >= "a" && character <= "z") || (character >= "0" && character <= "9")) {
+//       cleanReverseString += character;
+//     }
+//   }
+//   for (let j = 0; j < originalS.length; j++) {
+//     const character: string = originalS[j];
+//           if ((character >= "a" && character <= "z") || (character >= "0" && character <= "9")) {
+//        cleanOriginalString += character;
+//       }
+//   }
+//   return cleanOriginalString === cleanReverseString;
+//}
+//https://leetcode.com/problems/valid-palindrome/submissions/1666737777/
+//* Optimized
 function isPalindrome(s) {
-    var originalS = s.toLowerCase();
-    var cleanReverseString = "";
-    var cleanOriginalString = "";
-    if (s.length === 0 || s.length === 1) {
+    var cleanedString = "";
+    s = s.toLowerCase();
+    for (var i = 0; i < s.length; i++) {
+        var character = s[i];
+        if ((character >= "a" && character <= "z") ||
+            (character >= "0" && character <= "9")) {
+            cleanedString += character;
+        }
+    }
+    if (cleanedString.length <= 1) {
         return true;
     }
-    for (var i = originalS.length - 1; i >= 0; i--) {
-        var character = originalS[i];
-        if ((character >= "a" && character <= "z") || (character >= "0" && character <= "9")) {
-            cleanReverseString += character;
+    var left = 0;
+    var right = cleanedString.length - 1;
+    while (left < right) {
+        if (cleanedString[left] !== cleanedString[right]) {
+            return false;
         }
+        left++;
+        right--;
     }
-    for (var j = 0; j < originalS.length; j++) {
-        var character = originalS[j];
-        if ((character >= "a" && character <= "z") || (character >= "0" && character <= "9")) {
-            cleanOriginalString += character;
-        }
-    }
-    return cleanOriginalString === cleanReverseString;
+    return true;
 }
-// Example usage:
-console.log("\"A man, a plan, a canal: Panama\" is palindrome: ".concat(isPalindrome("A man, a plan, a canal: Panama"))); // true
-console.log("\"carrera de coches\" is palindrome: ".concat(isPalindrome("carrera de coches"))); // false
-console.log("\" \" is palindrome: ".concat(isPalindrome(" "))); // true
-console.log("\"0P\" is palindrome: ".concat(isPalindrome("0P"))); // false
+console.log(isPalindrome("ana"));
+console.log(isPalindrome("nanan"));
+console.log(isPalindrome("juana"));
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome("raceacar"));
