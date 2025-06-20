@@ -16,6 +16,8 @@ function drawBinarySquare(size: number): string[] {
     return square;
 }
 
+let nombr = "willian"
+
 const square3x3 = drawBinarySquare(3);
 console.log('Cuadrado 3x3:');
 square3x3.forEach(row => console.log(row));
