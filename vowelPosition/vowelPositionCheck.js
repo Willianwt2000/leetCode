@@ -32,7 +32,3 @@ function checkVowel(string, position) {
 
   return flagPosition;
 }
-
-console.log(checkVowel("cat", 1));
-console.log(checkVowel("cat", 0));
-console.log(checkVowel("cat", 4));
