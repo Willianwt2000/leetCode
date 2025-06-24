@@ -1,22 +1,18 @@
 function makeFancyString(s: string): string {
-    
-
-  return ""
-};
-
-
-console.log(makeFancyString("leeetcode"))
-console.log(makeFancyString("aabaaaa"))
-
-
-
-// function outer() {
-//     let outerVar = `Si un código funciona en tu máquina pero no en producción… 
-//     ¿existió realmente?`;
-//     function inner() {
-//         console.log(outerVar);
-//     }
-//     return inner;
-// }
-// const closure = outer(); 
-// closure();
+  const result: string[] = [];
+  let longitud = 0
+  
+  for (let i = 0; i < s.length; i++) {
+    const current: string = s[i]; 
+    if (
+      longitud >= 2 &&
+      result[longitud - 1] === current &&
+      result[longitud - 2] === current
+    ) {
+      continue;
+    }
+    result[longitud] = current;
+    longitud++ 
+  }
+  return result.join(''); 
+}
