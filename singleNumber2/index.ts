@@ -1,22 +1,21 @@
-function singleNumber(nums: number[]): number {
-  nums.sort();
+function singleNumber(nums: number[]): number | undefined{
+  let frecuencia: Map<number, number> = new Map();
 
-  console.log("Number: "+nums);
-
-  let count: number = 0;
-  let aux: number = 0;
-
-  for (let i = 0; i < nums.length; i++) {
-    if (aux === nums[i] && nums[i] === nums[i+1]) {
-      console.log(object)
-      count++;
+  for (const num of nums) {
+    if (frecuencia.has(num)) {
+      frecuencia.set(num, frecuencia.get(num)!  + 1 );
+    } else {
+      frecuencia.set(num, 1)
     }
-
-    
-    
   }
-  
-  return 0;
+
+
+  for (const [key, value] of frecuencia) {
+    if (value === 1) {
+      return key
+    }
+  }
+  return undefined;
 };
 
 
