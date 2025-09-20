@@ -1,24 +1,28 @@
-function ages(nums:number[], target:number) {
-  let min:number = 0;
-  let max: number = nums.length - 1
+function search(nums: number[], target:number) {
 
- while (min <= max) {
-    let guess = Math.floor((min + max) / 2);
+ let left:number = 0;
+ let right: number = nums.length - 1;
 
-    if (nums[guess] === target ) {
-      console.log(guess)
-      return guess;
-    }
 
-    if (nums[guess] < target) {
-      min = guess + 1;
-      console.log(min)
-    } else {
-       max = guess - 1;
-    }
+ while (left <= right) {
+  let mid = Math.floor((left + right) / 2);
+  console.log(mid)
+
+  if (nums[mid] === target) {
+    console.log(mid)
+    return mid;
   }
 
-  return min
+
+  if (nums[mid] < target) {
+    left = mid + 1;
+  } else {
+    right = mid - 1;
+  }
+
+  
+ }
+ return -1
 }
 
-console.log(ages([1,3,5,6],7))
+console.log(search([-1,0,3,5,9,12],2));
