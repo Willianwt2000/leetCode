@@ -43,3 +43,21 @@
 // };
 
 
+function calPoints(operations: string[]): number {
+    const scores: number[] = [];
+
+    for (let i = 0; i < operations.length; ++i) {
+        const operation = operations[i];
+        if (operation === 'C') {
+            scores.pop();
+        } else if (operation === 'D') {
+            scores.push(scores[scores.length - 1] * 2);
+        } else if (operation === '+') {
+            scores.push(scores[scores.length - 1] + scores[scores.length - 2]);
+        } else {
+            scores.push(Number(operation));
+        }
+    }
+
+    return scores.reduce((sum, s) => sum + s, 0);
+};
