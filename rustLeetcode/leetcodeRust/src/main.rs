@@ -1,19 +1,34 @@
-pub fn count_key_changes(s: String) -> i32 {
-   let mut count = 0;
-   let chars_str= s.to_lowercase();
-   let mut current_char:char = ' ';
+use std::collections::HashMap;
 
-   for char in chars_str.chars() {
-       if char != current_char {
-           current_char = char;
-           count += 1;
-       }
-   }
+pub fn is_anagram(s: String, t: String) -> bool {
+    if s.len() != t.len() {
+        return false;
+    }
+    
+    let mut char_counts = HashMap::new();
 
-   count - 1
+    for c in s.chars() {
+        *char_counts.entry(c).or_insert(0) += 1;
+    }
+
+    for c in t.chars() {
+        let count: Option<&mut i32> = char_counts.get_mut(&c);
+        if let Some(c) = count {
+            if *c == 0 {
+                return false;
+            }
+            *c -= 1;
+        } else {
+            return false;
+        }
+    }
+
+    char_counts.values().all(|&count| count == 0)
 }
 
 fn main() {
-    let s = "aAbBcC";
-    println!("Numbers: {}", count_key_changes(s.to_string()));
+    let s = "anagram";
+    let t = "nagaram";
+    println!("{} {} {}", s, t, is_anagram(s.to_string(), t.to_string()));
+    
 }
