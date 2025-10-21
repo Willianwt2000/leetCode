@@ -13,6 +13,4 @@ function validPalindrome(s) {
     console.log(isPalindrome(original, iSreverse));
     return flag;
 }
-// console.log(validPalindrome("aba"));
-// console.log(validPalindrome("abca"));
 console.log(validPalindrome("abc"));
